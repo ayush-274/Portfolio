@@ -3,7 +3,7 @@ import {
   Menu, X, Database, Github, Linkedin, Mail, ChevronRight, ChevronLeft, 
   Download, Code, Terminal, Cpu, BookOpen, Layers, Brain, CheckCircle, 
   BarChart, PieChart, TrendingUp, DollarSign, Activity, Filter, Server, 
-  Workflow, MapPin, Calculator, ArrowRight
+  Workflow, MapPin, Calculator, ArrowRight, Phone, FileText
 } from 'lucide-react';
 
 const Portfolio = () => {
@@ -32,18 +32,19 @@ const Portfolio = () => {
 
   const navigateTo = (viewId) => {
     setIsMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Instant scroll to top to prevent jarring jumps
+    window.scrollTo(0, 0); 
     setCurrentView(viewId);
   };
 
   const scrollToSection = (sectionId) => {
     if (currentView !== 'home') {
       navigateTo('home');
-      // Small timeout to allow the view to switch before scrolling
+      // Use a shorter timeout to allow React to render the home view first
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) element.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      }, 50);
     } else {
       setIsMenuOpen(false);
       const element = document.getElementById(sectionId);
@@ -53,16 +54,17 @@ const Portfolio = () => {
 
   const personalInfo = {
     name: "Ayush Agarwal",
-    title: "Data Scientist & Data Engineer",
-    tagline: "Architecting scalable data pipelines and deploying intelligent AI solutions.",
+    title: "Data Scientist & Software Engineer",
+    tagline: "Multidisciplinary engineer specializing in AI/ML, predictive modeling, and scalable data products.",
     email: "asagarwal04@gmail.com",
+    phone: "+91 8451928669",
     github: "github.com/ayush-274",
     linkedin: "www.linkedin.com/in/ayush-agarwal-195922274"
   };
 
   // --- COMPONENT: SALES DASHBOARD PREVIEW ---
   const SalesDashboardPreview = () => (
-    <div className="bg-white text-slate-900 rounded-xl overflow-hidden shadow-2xl border border-slate-700 font-sans my-8 animate-fadeIn">
+    <div className="bg-white text-slate-900 rounded-xl overflow-hidden shadow-2xl border border-slate-700 font-sans my-8">
       <div className="bg-slate-100 p-4 border-b border-slate-200 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <div className="p-2 bg-blue-600 rounded text-white"><BarChart size={18} /></div>
@@ -201,7 +203,7 @@ const Portfolio = () => {
   };
 
   const DataServicePage = () => (
-    <div className="pt-24 pb-12 animate-fadeIn">
+    <div className="pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <button onClick={() => navigateTo('home')} className="flex items-center text-slate-400 hover:text-emerald-400 mb-8 transition-colors">
           <ChevronLeft size={20} /> Back to Home
@@ -257,15 +259,23 @@ const Portfolio = () => {
             <div className="flex flex-col md:flex-row justify-between items-end mb-8 border-b border-slate-800 pb-4">
                  <div>
                      <span className="text-purple-400 font-mono text-xs uppercase tracking-wider mb-2 block">Project 02</span>
-                     <h3 className="text-3xl font-bold text-white mb-2">Rental Arbitrage Engine</h3>
+                     <h3 className="text-3xl font-bold text-white mb-2">NYC Rental Arbitrage Engine</h3>
                      <p className="text-slate-400 max-w-2xl">
-                         A data-driven engine identifying high-profit rental arbitrage opportunities by scraping listings from Airbnb & Zillow.
+                         Engineered an automated pipeline fusing 11,000+ Airbnb listings with Zillow data using Geopandas. Built an XGBoost price prediction model (R²=0.51) interpreted via SHAP analysis to identify {'>'}8% yield opportunities.
                      </p>
+                     <div className="flex gap-4 mt-4">
+                        <a href="https://github.com/ayush-274/rental-arbitrage-engine.git" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-medium">
+                            <Github size={16} /> View Code
+                        </a>
+                        <a href="https://rental-arbitrage-engine.streamlit.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-purple-400 hover:text-purple-300 font-medium">
+                            <ArrowRight size={16} /> Live Demo
+                        </a>
+                     </div>
                  </div>
                  <div className="mt-4 md:mt-0 flex gap-2">
-                     <span className="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">Selenium</span>
-                     <span className="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">Pandas</span>
-                     <span className="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">ROI Analysis</span>
+                     <span className="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">XGBoost</span>
+                     <span className="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">Streamlit</span>
+                     <span className="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">Geopandas</span>
                  </div>
             </div>
 
@@ -276,8 +286,8 @@ const Portfolio = () => {
                             <Database className="text-purple-400" size={24} />
                         </div>
                         <div>
-                            <h4 className="text-white font-bold text-lg">Data Ingestion</h4>
-                            <p className="text-slate-400 text-sm mt-1">Built custom scrapers using Python/Selenium to fetch nightly rates and occupancy calendars for 500+ properties.</p>
+                            <h4 className="text-white font-bold text-lg">Data Fusion</h4>
+                            <p className="text-slate-400 text-sm mt-1">Fused 11,000+ geospatial data points from Airbnb and Zillow using Geopandas to create a unified property dataset.</p>
                         </div>
                     </div>
                     <div className="flex gap-4">
@@ -285,8 +295,8 @@ const Portfolio = () => {
                             <MapPin className="text-purple-400" size={24} />
                         </div>
                         <div>
-                            <h4 className="text-white font-bold text-lg">Location Analysis</h4>
-                            <p className="text-slate-400 text-sm mt-1">Cross-referenced scraped data with crime rates and walkability scores to filter for low-risk neighborhoods.</p>
+                            <h4 className="text-white font-bold text-lg">Interactive Mapping</h4>
+                            <p className="text-slate-400 text-sm mt-1">Deployed a live Streamlit dashboard featuring interactive choropleth maps for real-time filtering of high-yield neighborhoods.</p>
                         </div>
                     </div>
                     <div className="flex gap-4">
@@ -294,8 +304,8 @@ const Portfolio = () => {
                             <TrendingUp className="text-purple-400" size={24} />
                         </div>
                         <div>
-                            <h4 className="text-white font-bold text-lg">Profitability Algorithm</h4>
-                            <p className="text-slate-400 text-sm mt-1">Developed a scoring model that calculates projected ROI by factoring in seasonality and dynamic pricing.</p>
+                            <h4 className="text-white font-bold text-lg">Predictive Modeling</h4>
+                            <p className="text-slate-400 text-sm mt-1">Built an XGBoost regression model to predict rental prices, achieving an R² of 0.51, with SHAP analysis for model interpretability.</p>
                         </div>
                     </div>
                 </div>
@@ -315,7 +325,7 @@ const Portfolio = () => {
   );
 
   const HomeView = () => (
-    <div className="animate-fadeIn">
+    <div>
       <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -361,24 +371,30 @@ const Portfolio = () => {
               Specialized engineering services to handle your data infrastructure, analysis, and AI implementation.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-             {/* Service Cards pointing to the same Data View */}
-             {[
-               { id: 'etl', title: "ETL & Pipeline Architecture", icon: Server, desc: "Designing robust systems that collect, clean, and transform raw data into ready-to-use assets." },
-               { id: 'ai', title: "Predictive AI Models", icon: Brain, desc: "Deploying machine learning models (Regression, YOLOv8) to automate decisions." },
-               { id: 'viz', title: "Business Intelligence", icon: BarChart, desc: "Creating interactive Tableau dashboards for executive decision-making." }
-             ].map((feature) => (
-                <div key={feature.id} onClick={() => navigateTo('service-data')} className="bg-slate-900 border border-slate-700 p-8 rounded-2xl hover:border-emerald-500/50 transition-all hover:-translate-y-1 group flex flex-col h-full cursor-pointer">
-                    <div className="bg-slate-800 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <feature.icon className={`w-8 h-8 ${feature.id === 'ai' ? 'text-purple-400' : feature.id === 'viz' ? 'text-blue-400' : 'text-emerald-400'}`} />
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                    <p className="text-slate-400 mb-6 leading-relaxed flex-grow">{feature.desc}</p>
-                    <div className="flex items-center text-emerald-400 text-sm font-medium group-hover:gap-2 transition-all">
-                        View Details <ChevronRight size={16} />
-                    </div>
+          <div className="max-w-4xl mx-auto">
+            <div 
+              onClick={() => navigateTo('service-data')} 
+              className="bg-slate-900 border border-slate-700 p-8 md:p-12 rounded-2xl hover:border-emerald-500/50 transition-all hover:-translate-y-1 group cursor-pointer text-center"
+            >
+                <div className="bg-slate-800 w-20 h-20 rounded-2xl flex items-center justify-center mb-8 mx-auto group-hover:scale-110 transition-transform">
+                    <Workflow className="w-10 h-10 text-emerald-400" />
                 </div>
-             ))}
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">End-to-End Data Pipelining & AI Solutions</h3>
+                <p className="text-slate-400 mb-8 leading-relaxed text-lg">
+                  From architecting robust ETL systems and warehousing to deploying predictive AI models and interactive dashboards. 
+                  I handle the complete lifecycle of data to transform raw inputs into actionable business intelligence.
+                </p>
+                <div className="flex flex-wrap justify-center gap-3 mb-8">
+                  {["ETL Architecture", "Predictive Modeling", "Business Intelligence", "Cloud Infrastructure"].map((tag) => (
+                    <span key={tag} className="px-4 py-2 bg-slate-800 text-slate-300 text-sm rounded-full border border-slate-700">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="inline-flex items-center text-emerald-400 font-bold group-hover:gap-2 transition-all">
+                    View Projects & Details <ChevronRight size={20} />
+                </div>
+            </div>
           </div>
         </div>
       </section>
@@ -394,26 +410,142 @@ const Portfolio = () => {
               <Download size={18} /> Download Full Resume
             </button>
           </div>
+          
           <div className="space-y-16">
+            {/* Experience */}
             <div>
               <h3 className="text-xl font-semibold text-emerald-400 mb-8 flex items-center gap-2">Professional Experience</h3>
               <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-emerald-500/30 transition-colors">
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-wrap gap-2">
                     <div><h4 className="text-xl font-bold text-white">Web Developer Intern</h4><p className="text-emerald-400">Afame Technologies</p></div>
-                    <span className="text-slate-500 text-sm">Apr 2024 - May 2024</span>
+                    <span className="text-slate-500 text-sm font-mono">Apr 2024 - May 2024</span>
                 </div>
-                <p className="text-slate-400 mt-4">Developed responsive pages and refined frontend integration for data-driven applications.</p>
+                <p className="text-slate-400 mt-4 leading-relaxed">
+                  Developed and optimized dynamic, responsive web pages using HTML, CSS, and JavaScript. Improved load times and user experience for client websites.
+                </p>
               </div>
             </div>
-            {/* Added Education Section */}
+
+            {/* Other Projects List */}
+            <div>
+              <h3 className="text-xl font-semibold text-purple-400 mb-8 flex items-center gap-2">Other Key Projects</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 {/* NYC Rental Arbitrage Engine */}
+                 <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-purple-500/30 transition-colors">
+                    <div className="flex justify-between items-start">
+                        <h4 className="text-lg font-bold text-white">NYC Rental Arbitrage Engine</h4>
+                        <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">Data Science</span>
+                    </div>
+                    <p className="text-slate-400 text-sm mt-3">
+                        Engineered automated pipeline fusing 11,000+ Airbnb/Zillow listings. Built XGBoost prediction model (R²=0.51) and ROI calculator identifying &gt;8% yield opportunities.
+                    </p>
+                    <div className="flex gap-4 mt-4 text-xs">
+                        <a href="https://github.com/ayush-274/rental-arbitrage-engine.git" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300">
+                            <Github size={12} /> GitHub
+                        </a>
+                        <a href="https://rental-arbitrage-engine.streamlit.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-blue-400 hover:text-blue-300">
+                            <ArrowRight size={12} /> Live Demo
+                        </a>
+                    </div>
+                 </div>
+
+                 <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-purple-500/30 transition-colors">
+                    <div className="flex justify-between items-start">
+                        <h4 className="text-lg font-bold text-white">VCheck: Uniform Compliance</h4>
+                        <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">Computer Vision</span>
+                    </div>
+                    <p className="text-slate-400 text-sm mt-3">
+                        Engineered an AI model using YOLOv8 to detect uniform compliance from images with 98% accuracy. Trained on a custom dataset to automate visual inspection.
+                    </p>
+                 </div>
+                 <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-purple-500/30 transition-colors">
+                    <div className="flex justify-between items-start">
+                        <h4 className="text-lg font-bold text-white">PhytoFinder</h4>
+                        <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">Deep Learning</span>
+                    </div>
+                    <p className="text-slate-400 text-sm mt-3">
+                        Built a CNN-based plant classification system achieving 97% accuracy. Led model training and UI integration in an agile team of 5.
+                    </p>
+                 </div>
+                 <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-purple-500/30 transition-colors">
+                    <div className="flex justify-between items-start">
+                        <h4 className="text-lg font-bold text-white">Digital Farming (IoT)</h4>
+                        <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">IoT & Analytics</span>
+                    </div>
+                    <p className="text-slate-400 text-sm mt-3">
+                        Designed a hydroponics-based farming system with IoT sensors for real-time soil moisture and crop health tracking. Integrated alert systems.
+                    </p>
+                 </div>
+              </div>
+            </div>
+
+            {/* Publications */}
+            <div>
+              <h3 className="text-xl font-semibold text-orange-400 mb-8 flex items-center gap-2">Publications</h3>
+              <div className="space-y-4">
+                {[
+                    {
+                        title: "Predictive Modelling of Physicochemical Properties of Cissus Quadrangularis",
+                        journal: "Letters in Applied NanoBioScience",
+                        desc: "Built regression models (Random Forest, AdaBoost, Linear) to model compound behaviors. 10.33263/LIANBS143.192"
+                    },
+                    {
+                        title: "Looking-Glass Upon the Wall... Body Image and Social Media's Impact on Indian Youth",
+                        journal: "Indian Journal of Social Psychiatry (Under Review)",
+                        desc: "Led data visualization and statistical analysis for study involving 143 students; explored body image and self-esteem through ML-backed insights."
+                    },
+                    {
+                        title: "QSPR Analysis of Cissus Quadrangularis Compounds Using Topological Indices and Machine Learning Models",
+                        journal: "Journal of Healthcare Informatics Research (Under Review)",
+                        desc: "Applied ML algorithms to predict compound properties using topological descriptors."
+                    },
+                    {
+                        title: "Modelling of Physicochemical Properties of Papaya Leaf Compounds Using Topological Indices and Random Forest Regression",
+                        journal: "Journal of Applied Statistics (Submitted)",
+                        desc: "Developed predictive models using topological indices to estimate compound properties via Random Forest regression."
+                    },
+                    {
+                        title: "Predictive QSAR Modelling of Bioactivity for Phytochemicals from Carica papaya",
+                        journal: "Polycyclic Aromatic Compounds (Submitted)",
+                        desc: "Trained and compared multiple Regression models for predicting the bioactivity for Phytochemicals extracted from Papaya."
+                    },
+                    {
+                        title: "Proposing the Urban Plant Suitability Index (UPSI): A Multi-Criteria Framework for Selecting Flora in Tropical Urban Ecosystems",
+                        journal: "Forest Ecology and Management (Submitted)",
+                        desc: "Proposed a Urban Plant Suitability Index (UPSI) for urban planning and boost urban forestry."
+                    }
+                ].map((pub, idx) => (
+                    <div key={idx} className="border-l-2 border-slate-700 pl-4 py-2 hover:border-orange-400 transition-colors">
+                        <h5 className="text-white font-medium text-lg leading-tight">{pub.title}</h5>
+                        <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3 mt-1">
+                            <span className="text-orange-400 text-sm italic font-medium whitespace-nowrap">{pub.journal}</span>
+                            <span className="hidden sm:inline text-slate-600 mt-0.5">•</span>
+                            <span className="text-slate-400 text-sm leading-snug">{pub.desc}</span>
+                        </div>
+                    </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Education */}
             <div>
               <h3 className="text-xl font-semibold text-blue-400 mb-8 flex items-center gap-2">Education</h3>
-              <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-blue-500/30 transition-colors">
-                <div className="flex justify-between">
-                    <div><h4 className="text-xl font-bold text-white">B.Tech in Computer Science (AI & ML)</h4><p className="text-blue-400">Vellore Institute of Technology, Chennai</p></div>
-                    <span className="text-slate-500 text-sm">2022 - Present</span>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-blue-500/30 transition-colors">
+                    <div><h4 className="text-lg font-bold text-white">B.Tech in CSE (AI & ML)</h4><p className="text-blue-400 text-sm">Vellore Institute of Technology, Chennai</p></div>
+                    <span className="text-slate-500 text-xs mt-2 block">Sept 2022 - Present</span>
+                    <p className="text-slate-300 font-bold mt-4">CGPA: 8.72</p>
                 </div>
-                <p className="text-slate-400 mt-4">Specialization in Artificial Intelligence and Machine Learning. CGPA: 8.72</p>
+                <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-blue-500/30 transition-colors">
+                    <div><h4 className="text-lg font-bold text-white">Higher Secondary (12th)</h4><p className="text-blue-400 text-sm">Narayana E-Techno School, Mumbai</p></div>
+                    <span className="text-slate-500 text-xs mt-2 block">May 2020 - May 2022</span>
+                    <p className="text-slate-300 font-bold mt-4">Grade: 88%</p>
+                </div>
+                <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-blue-500/30 transition-colors">
+                    <div><h4 className="text-lg font-bold text-white">Secondary School (10th)</h4><p className="text-blue-400 text-sm">RBK School, Mumbai</p></div>
+                    <span className="text-slate-500 text-xs mt-2 block">2020</span>
+                    <p className="text-slate-300 font-bold mt-4">Grade: 94%</p>
+                </div>
               </div>
             </div>
           </div>
@@ -435,6 +567,25 @@ const Portfolio = () => {
               <textarea name="message" rows={4} placeholder="Project Details..." className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500" required></textarea>
               <button type="submit" className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 rounded-lg transition-all">Send Message</button>
             </form>
+            
+            <div className="mt-8 pt-8 border-t border-slate-700 flex flex-col md:flex-row justify-center gap-8 text-slate-400 text-sm">
+                <div className="flex items-center gap-2">
+                    <Mail size={16} className="text-emerald-400" /> {personalInfo.email}
+                </div>
+                <div className="flex items-center gap-2">
+                    <Phone size={16} className="text-emerald-400" /> {personalInfo.phone}
+                </div>
+                <div className="flex items-center gap-2">
+                    <a href="https://github.com/ayush-274" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+                        <Github size={16} className="text-emerald-400" /> GitHub
+                    </a>
+                </div>
+                <div className="flex items-center gap-2">
+                    <a href="https://www.linkedin.com/in/ayush-agarwal-195922274" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+                        <Linkedin size={16} className="text-emerald-400" /> LinkedIn
+                    </a>
+                </div>
+            </div>
           </div>
         </div>
       </section>
