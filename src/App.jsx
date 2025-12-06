@@ -59,7 +59,9 @@ const Portfolio = () => {
     email: "asagarwal04@gmail.com",
     phone: "+91 8451928669",
     github: "github.com/ayush-274",
-    linkedin: "www.linkedin.com/in/ayush-agarwal-195922274"
+    linkedin: "www.linkedin.com/in/ayush-agarwal-195922274",
+    // IMPORTANT: Ensure 'Resume_Ayush_Agarwal.pdf' is placed inside the 'public' folder of your project
+    resumeLink: "/Resume_Ayush_Agarwal.pdf" 
   };
 
   // --- COMPONENT: SALES DASHBOARD PREVIEW ---
@@ -264,11 +266,11 @@ const Portfolio = () => {
                          Engineered an automated pipeline fusing 11,000+ Airbnb listings with Zillow data using Geopandas. Built an XGBoost price prediction model (R²=0.51) interpreted via SHAP analysis to identify {'>'}8% yield opportunities.
                      </p>
                      <div className="flex gap-4 mt-4">
-                        <a href="https://github.com/ayush-274/rental-arbitrage-engine.git" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-medium">
-                            <Github size={16} /> View Code
+                        <a href="https://github.com/ayush-274/rental-arbitrage-engine.git" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-medium">
+                            <Github size={12} /> GitHub
                         </a>
-                        <a href="https://rental-arbitrage-engine.streamlit.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-purple-400 hover:text-purple-300 font-medium">
-                            <ArrowRight size={16} /> Live Demo
+                        <a href="https://rental-arbitrage-engine.streamlit.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-blue-400 hover:text-blue-300">
+                            <ArrowRight size={12} /> Live Demo
                         </a>
                      </div>
                  </div>
@@ -406,9 +408,13 @@ const Portfolio = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">My Journey</h2>
               <p className="text-slate-400">Education, Experience & Research</p>
             </div>
-            <button className="px-4 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-lg flex items-center gap-2 transition-colors">
+            <a 
+              href={personalInfo.resumeLink} 
+              download 
+              className="px-4 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-lg flex items-center gap-2 transition-colors"
+            >
               <Download size={18} /> Download Full Resume
-            </button>
+            </a>
           </div>
           
           <div className="space-y-16">
