@@ -316,6 +316,47 @@ const Portfolio = () => {
             </div>
         </div>
 
+        {/* Project 3: Tech Talent Pulse */}
+        <div className="mb-24">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-8 border-b border-slate-800 pb-4">
+                 <div>
+                     <span className="text-blue-400 font-mono text-xs uppercase tracking-wider mb-2 block">Project 03</span>
+                     <h3 className="text-3xl font-bold text-white mb-2">Tech Talent Pulse</h3>
+                     <p className="text-slate-400 max-w-2xl">
+                         Developed an end-to-end automated scraping pipeline using Python/Selenium to aggregate job postings. Implemented NLP for keyword extraction to identify high-demand skills and salary trends.
+                     </p>
+                     <div className="flex gap-4 mt-4">
+                        <a href="https://github.com/ayush-274/tech-talent-pulse" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-medium">
+                            <Github size={12} /> GitHub
+                        </a>
+                        <a href="https://tech-talent-pulse.streamlit.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-blue-400 hover:text-blue-300">
+                            <ArrowRight size={12} /> Live Demo
+                        </a>
+                     </div>
+                 </div>
+                 <div className="mt-4 md:mt-0 flex gap-2">
+                     <span className="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">Selenium</span>
+                     <span className="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">NLP</span>
+                     <span className="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">CI/CD</span>
+                 </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
+                    <h4 className="text-white font-bold mb-2 flex items-center gap-2"><Globe size={16} className="text-blue-400"/> Automated Scraping</h4>
+                    <p className="text-slate-400 text-sm">Built a robust scraper with Selenium to collect real-time job data from multiple platforms.</p>
+                </div>
+                <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
+                    <h4 className="text-white font-bold mb-2 flex items-center gap-2"><Brain size={16} className="text-blue-400"/> NLP Analysis</h4>
+                    <p className="text-slate-400 text-sm">Utilized Natural Language Processing to extract and rank key skills and technologies from job descriptions.</p>
+                </div>
+                <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
+                    <h4 className="text-white font-bold mb-2 flex items-center gap-2"><Server size={16} className="text-blue-400"/> CI/CD Pipeline</h4>
+                    <p className="text-slate-400 text-sm">Implemented Continuous Integration and Deployment workflows for seamless updates and maintenance.</p>
+                </div>
+            </div>
+        </div>
+
         <div className="bg-emerald-900/10 border border-emerald-500/20 rounded-2xl p-8 md:p-12 text-center">
           <h3 className="text-2xl font-bold text-white mb-4">Ready to optimize your data flow?</h3>
           <button onClick={() => scrollToSection('contact')} className="px-8 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-medium transition-colors">
@@ -443,7 +484,7 @@ const Portfolio = () => {
                         <span className="text-xs bg-blue-900/50 text-blue-300 px-2 py-1 rounded">Data Engineering</span>
                     </div>
                     <p className="text-slate-400 text-sm mt-3">
-                        Developed an end-to-end automated scraping pipeline using Python and Selenium to aggregate job postings. Implemented NLP for keyword extraction to identify high-demand skills and salary trends.
+                        Developed an automated scraping pipeline using Python/Selenium to aggregate job postings. Used NLP for keyword extraction to identify high-demand skills and CI/CD for continuous deployment.
                     </p>
                     <div className="flex gap-4 mt-4 text-xs">
                         <a href="https://github.com/ayush-274/tech-talent-pulse" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300">
@@ -616,7 +657,7 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0 cursor-pointer" onClick={() => navigateTo('home')}>
-              <span className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">Ayush Agarwal</span>
+              <span className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">Ayush.</span>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
