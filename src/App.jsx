@@ -3,7 +3,7 @@ import {
   Menu, X, Database, Github, Linkedin, Mail, ChevronRight, ChevronLeft, 
   Download, Code, Terminal, Cpu, BookOpen, Layers, Brain, CheckCircle, 
   BarChart, PieChart, TrendingUp, DollarSign, Activity, Filter, Server, 
-  Workflow, MapPin, Calculator, ArrowRight, Phone, FileText
+  Workflow, MapPin, Calculator, ArrowRight, Phone, FileText, Globe
 } from 'lucide-react';
 
 const Portfolio = () => {
@@ -57,7 +57,7 @@ const Portfolio = () => {
     title: "Data Scientist & Software Engineer",
     tagline: "Multidisciplinary engineer specializing in AI/ML, predictive modeling, and scalable data products.",
     email: "asagarwal04@gmail.com",
-    phone: "+91 8451928669",
+    // phone number removed
     github: "github.com/ayush-274",
     linkedin: "www.linkedin.com/in/ayush-agarwal-195922274",
     // IMPORTANT: Ensure 'Resume_Ayush_Agarwal.pdf' is placed inside the 'public' folder of your project
@@ -436,6 +436,25 @@ const Portfolio = () => {
             <div>
               <h3 className="text-xl font-semibold text-purple-400 mb-8 flex items-center gap-2">Other Key Projects</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 {/* Tech Talent Pulse */}
+                 <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-blue-500/30 transition-colors">
+                    <div className="flex justify-between items-start">
+                        <h4 className="text-lg font-bold text-white">Tech Talent Pulse</h4>
+                        <span className="text-xs bg-blue-900/50 text-blue-300 px-2 py-1 rounded">Data Engineering</span>
+                    </div>
+                    <p className="text-slate-400 text-sm mt-3">
+                        Developed an end-to-end automated scraping pipeline using Python and Selenium to aggregate job postings. Implemented NLP for keyword extraction to identify high-demand skills and salary trends.
+                    </p>
+                    <div className="flex gap-4 mt-4 text-xs">
+                        <a href="https://github.com/ayush-274/tech-talent-pulse" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300">
+                            <Github size={12} /> GitHub
+                        </a>
+                        <a href="https://tech-talent-pulse.streamlit.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-blue-400 hover:text-blue-300">
+                            <ArrowRight size={12} /> Live Demo
+                        </a>
+                    </div>
+                 </div>
+
                  {/* NYC Rental Arbitrage Engine */}
                  <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-purple-500/30 transition-colors">
                     <div className="flex justify-between items-start">
@@ -443,7 +462,7 @@ const Portfolio = () => {
                         <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">Data Science</span>
                     </div>
                     <p className="text-slate-400 text-sm mt-3">
-                        Engineered automated pipeline fusing 11,000+ Airbnb/Zillow listings. Built XGBoost prediction model (R²=0.51) and ROI calculator identifying &gt;8% yield opportunities.
+                        Engineered an automated pipeline fusing 11,000+ Airbnb listings with Zillow data using Geopandas. Built an XGBoost price prediction model (R²=0.51) interpreted via SHAP analysis.
                     </p>
                     <div className="flex gap-4 mt-4 text-xs">
                         <a href="https://github.com/ayush-274/rental-arbitrage-engine.git" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300">
@@ -471,15 +490,6 @@ const Portfolio = () => {
                     </div>
                     <p className="text-slate-400 text-sm mt-3">
                         Built a CNN-based plant classification system achieving 97% accuracy. Led model training and UI integration in an agile team of 5.
-                    </p>
-                 </div>
-                 <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-purple-500/30 transition-colors">
-                    <div className="flex justify-between items-start">
-                        <h4 className="text-lg font-bold text-white">Digital Farming (IoT)</h4>
-                        <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">IoT & Analytics</span>
-                    </div>
-                    <p className="text-slate-400 text-sm mt-3">
-                        Designed a hydroponics-based farming system with IoT sensors for real-time soil moisture and crop health tracking. Integrated alert systems.
                     </p>
                  </div>
               </div>
@@ -578,9 +588,7 @@ const Portfolio = () => {
                 <div className="flex items-center gap-2">
                     <Mail size={16} className="text-emerald-400" /> {personalInfo.email}
                 </div>
-                <div className="flex items-center gap-2">
-                    <Phone size={16} className="text-emerald-400" /> {personalInfo.phone}
-                </div>
+                {/* Phone number removed */}
                 <div className="flex items-center gap-2">
                     <a href="https://github.com/ayush-274" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
                         <Github size={16} className="text-emerald-400" /> GitHub
@@ -608,7 +616,7 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0 cursor-pointer" onClick={() => navigateTo('home')}>
-              <span className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">Ayush.</span>
+              <span className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">Ayush Agarwal</span>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
