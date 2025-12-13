@@ -3,7 +3,7 @@ import {
   Menu, X, Database, Github, Linkedin, Mail, ChevronRight, ChevronLeft, 
   Download, Code, Terminal, Cpu, BookOpen, Layers, Brain, CheckCircle, 
   BarChart, PieChart, TrendingUp, DollarSign, Activity, Filter, Server, 
-  Workflow, MapPin, Calculator, ArrowRight, Phone, FileText, Globe
+  Workflow, MapPin, Calculator, ArrowRight, Phone, FileText, Globe, Truck
 } from 'lucide-react';
 
 const Portfolio = () => {
@@ -357,6 +357,47 @@ const Portfolio = () => {
             </div>
         </div>
 
+        {/* Project 4: SCM-Optima */}
+        <div className="mb-24">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-8 border-b border-slate-800 pb-4">
+                 <div>
+                     <span className="text-orange-400 font-mono text-xs uppercase tracking-wider mb-2 block">Project 04</span>
+                     <h3 className="text-3xl font-bold text-white mb-2">SCM-Optima: AI Supply Chain Control Tower</h3>
+                     <p className="text-slate-400 max-w-2xl">
+                         Developed an end-to-end analytics platform processing 180,000+ orders. Engineered a Random Forest classifier (83% accuracy) to predict shipment delays and enable proactive risk mitigation.
+                     </p>
+                     <div className="flex gap-4 mt-4">
+                        <a href="https://github.com/ayush-274/scm-optima" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-medium">
+                            <Github size={12} /> GitHub
+                        </a>
+                        <a href="https://scm-optima-ayush.streamlit.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-blue-400 hover:text-blue-300">
+                            <ArrowRight size={12} /> Live Demo
+                        </a>
+                     </div>
+                 </div>
+                 <div className="mt-4 md:mt-0 flex gap-2">
+                     <span className="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">Prophet</span>
+                     <span className="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">Plotly</span>
+                     <span className="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">Streamlit</span>
+                 </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
+                    <h4 className="text-white font-bold mb-2 flex items-center gap-2"><TrendingUp size={16} className="text-orange-400"/> Demand Forecasting</h4>
+                    <p className="text-slate-400 text-sm">Designed a dynamic inventory optimization engine using Prophet for 30-day demand forecasting.</p>
+                </div>
+                <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
+                    <h4 className="text-white font-bold mb-2 flex items-center gap-2"><Truck size={16} className="text-orange-400"/> Delay Prediction</h4>
+                    <p className="text-slate-400 text-sm">Engineered a Random Forest classifier achieving 83% accuracy to predict shipment delays.</p>
+                </div>
+                <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
+                    <h4 className="text-white font-bold mb-2 flex items-center gap-2"><Calculator size={16} className="text-orange-400"/> Inventory Optimization</h4>
+                    <p className="text-slate-400 text-sm">Automated Safety Stock and Reorder Point calculations, displayed via a real-time dashboard.</p>
+                </div>
+            </div>
+        </div>
+
         <div className="bg-emerald-900/10 border border-emerald-500/20 rounded-2xl p-8 md:p-12 text-center">
           <h3 className="text-2xl font-bold text-white mb-4">Ready to optimize your data flow?</h3>
           <button onClick={() => scrollToSection('contact')} className="px-8 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-medium transition-colors">
@@ -477,6 +518,36 @@ const Portfolio = () => {
             <div>
               <h3 className="text-xl font-semibold text-purple-400 mb-8 flex items-center gap-2">Other Key Projects</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 {/* SCM-Optima (New Addition) */}
+                 <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-purple-500/30 transition-colors">
+                    <div className="flex justify-between items-start">
+                        <h4 className="text-lg font-bold text-white">SCM-Optima</h4>
+                        <span className="text-xs bg-orange-900/50 text-orange-300 px-2 py-1 rounded">Supply Chain AI</span>
+                    </div>
+                    <p className="text-slate-400 text-sm mt-3">
+                        Developed an analytics platform processing 180,000+ orders. Engineered a Random Forest classifier (83% accuracy) to predict shipment delays and enable proactive risk mitigation.
+                    </p>
+                    <div className="flex gap-4 mt-4 text-xs">
+                        <a href="https://github.com/ayush-274/scm-optima" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300">
+                            <Github size={12} /> GitHub
+                        </a>
+                        <a href="https://scm-optima-ayush.streamlit.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-blue-400 hover:text-blue-300">
+                            <ArrowRight size={12} /> Live Demo
+                        </a>
+                    </div>
+                 </div>
+
+                 {/* InsightIQ Project */}
+                 <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-purple-500/30 transition-colors">
+                    <div className="flex justify-between items-start">
+                        <h4 className="text-lg font-bold text-white">InsightIQ</h4>
+                        <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">Data Analysis</span>
+                    </div>
+                    <p className="text-slate-400 text-sm mt-3">
+                        Advanced analytics platform leveraging AI to derive actionable business insights from complex datasets. Features interactive visualizations and predictive reporting.
+                    </p>
+                 </div>
+
                  {/* Tech Talent Pulse */}
                  <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-blue-500/30 transition-colors">
                     <div className="flex justify-between items-start">
@@ -503,7 +574,7 @@ const Portfolio = () => {
                         <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">Data Science</span>
                     </div>
                     <p className="text-slate-400 text-sm mt-3">
-                        Engineered an automated pipeline fusing 11,000+ Airbnb listings with Zillow data using Geopandas. Built an XGBoost price prediction model (R²=0.51) interpreted via SHAP analysis.
+                        Engineered automated pipeline fusing 11,000+ Airbnb/Zillow listings. Built XGBoost prediction model (R²=0.51) and ROI calculator identifying &gt;8% yield opportunities.
                     </p>
                     <div className="flex gap-4 mt-4 text-xs">
                         <a href="https://github.com/ayush-274/rental-arbitrage-engine.git" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300">
@@ -531,6 +602,15 @@ const Portfolio = () => {
                     </div>
                     <p className="text-slate-400 text-sm mt-3">
                         Built a CNN-based plant classification system achieving 97% accuracy. Led model training and UI integration in an agile team of 5.
+                    </p>
+                 </div>
+                 <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-purple-500/30 transition-colors">
+                    <div className="flex justify-between items-start">
+                        <h4 className="text-lg font-bold text-white">Digital Farming (IoT)</h4>
+                        <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">IoT & Analytics</span>
+                    </div>
+                    <p className="text-slate-400 text-sm mt-3">
+                        Designed a hydroponics-based farming system with IoT sensors for real-time soil moisture and crop health tracking. Integrated alert systems.
                     </p>
                  </div>
               </div>
