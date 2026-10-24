@@ -1,0 +1,29 @@
+
+:root {
+  color-scheme: light;
+
+  --color-bg: #faf9f6;
+  --color-surface: #ffffff;
+  --color-text: #202321;
+  --color-muted: #666b67;
+  --color-border: #e5e2db;
+
+  --color-accent: #2449b5;
+  --color-accent-hover: #1b388d;
+  --color-accent-soft: #e8efff;
+
+  --container-width: 1160px;
+  --page-padding: 48px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --transition-fast: 180ms ease;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --page-padding: 22px;
+  }
+}

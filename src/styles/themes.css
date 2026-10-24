@@ -1,0 +1,18 @@
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg: #151715;
+  --color-surface: #202320;
+  --color-text: #f2f1ec;
+  --color-muted: #a8aea8;
+  --color-border: #383d38;
+
+  --color-accent: #91aaff;
+  --color-accent-hover: #b1c2ff;
+  --color-accent-soft: #283451;
+}
