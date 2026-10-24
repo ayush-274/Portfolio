@@ -21,10 +21,10 @@ import { certifications, education } from "../data/credentials.js";
 import "./PortfolioPage.css";
 
 const resumes = [
-  { label: "AI & Machine Learning", file: "ai-ml.pdf", code: "01" },
-  { label: "Data Analyst", file: "data-analyst.pdf", code: "02" },
-  { label: "Data Engineer", file: "data-engineer.pdf", code: "03" },
-  { label: "Data Scientist", file: "data-scientist.pdf", code: "04" },
+  { label: "AI & Machine Learning", file: "AI&ML_Resume_Ayush_Agarwal.pdf", code: "01" },
+  { label: "Data Analyst", file: "DA_Resume_Ayush_Agarwal.pdf", code: "02" },
+  { label: "Data Engineer", file: "DE_Resume_Ayush_Agarwal.pdf", code: "03" },
+  { label: "Data Scientist", file: "DS_Resume_Ayush_Agarwal.pdf", code: "04" },
 ];
 
 const projectVisuals = {
@@ -606,7 +606,7 @@ export default function PortfolioPage() {
             {resumes.map((resume) => (
               <a
                 className="portfolio-resume-link"
-                href={`/documents/resumes/${resume.file}`}
+                href={`/documents/${resume.file}`}
                 download
                 key={resume.file}
               >
