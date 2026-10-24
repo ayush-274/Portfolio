@@ -1,0 +1,301 @@
+
+/* =========================================================
+   PORTFOLIO NAVIGATION
+   ========================================================= */
+
+.portfolio-navbar {
+  --nav-bg: var(--color-bg, #faf9f6);
+  --nav-surface: var(--color-surface, #ffffff);
+  --nav-text: var(--color-text, #202321);
+  --nav-muted: var(--color-muted, #666b67);
+  --nav-border: var(--color-border, #e5e2db);
+  --nav-accent: var(--color-accent, #2449b5);
+  --nav-accent-hover: var(--color-accent-hover, #1b388d);
+  --nav-accent-soft: var(--color-accent-soft, #e8efff);
+
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid var(--nav-border);
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.portfolio-nav-container {
+  display: flex;
+  width: min(1160px, calc(100% - 64px));
+  min-height: 78px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-inline: auto;
+}
+
+.portfolio-nav-brand {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 11px;
+  color: var(--nav-text);
+  text-decoration: none;
+}
+
+.portfolio-nav-monogram {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border: 1px solid var(--nav-border);
+  border-radius: 11px;
+  background: var(--nav-surface);
+  color: var(--nav-accent);
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.portfolio-nav-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.portfolio-nav-brand-text strong {
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
+}
+
+.portfolio-nav-brand-text small {
+  color: var(--nav-muted);
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+}
+
+.portfolio-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.portfolio-nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 13px;
+  border-radius: 7px;
+  color: var(--nav-muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.portfolio-nav-link:hover,
+.portfolio-nav-link.is-active {
+  background: var(--nav-surface);
+  color: var(--nav-accent);
+}
+
+.portfolio-nav-link.is-active {
+  box-shadow: inset 0 0 0 1px var(--nav-border);
+}
+
+.portfolio-nav-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 13px;
+}
+
+.portfolio-nav-contact {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid var(--nav-border);
+  border-radius: 7px;
+  color: var(--nav-text);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.portfolio-nav-contact:hover {
+  border-color: var(--nav-accent);
+  background: var(--nav-accent-soft);
+  color: var(--nav-accent-hover);
+}
+
+.portfolio-nav-contact svg {
+  color: var(--nav-accent);
+  transition: color 180ms ease;
+}
+
+.portfolio-nav-menu-button {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--nav-border);
+  border-radius: 8px;
+  background: var(--nav-surface);
+  color: var(--nav-text);
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    background-color 180ms ease;
+}
+
+.portfolio-nav-menu-button:hover {
+  border-color: var(--nav-accent);
+  color: var(--nav-accent);
+}
+
+.portfolio-nav-mobile-section-link {
+  display: none;
+}
+
+.portfolio-navbar a:focus-visible,
+.portfolio-navbar button:focus-visible {
+  outline: 2px solid var(--nav-accent);
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .portfolio-nav-container {
+    width: calc(100% - 36px);
+    min-height: 70px;
+    gap: 12px;
+  }
+
+  .portfolio-nav-brand {
+    gap: 9px;
+  }
+
+  .portfolio-nav-monogram {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
+  .portfolio-nav-brand-text strong {
+    font-size: 12px;
+  }
+
+  .portfolio-nav-brand-text small {
+    font-size: 7px;
+  }
+
+  .portfolio-nav-actions {
+    gap: 9px;
+  }
+
+  .portfolio-nav-contact {
+    min-height: 38px;
+    padding-inline: 10px;
+  }
+
+  .portfolio-nav-menu-button {
+    display: inline-flex;
+  }
+
+  .portfolio-nav-links {
+    position: absolute;
+    top: calc(100% + 1px);
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px 18px 19px;
+    border-bottom: 1px solid var(--nav-border);
+    background: var(--nav-bg);
+    box-shadow: 0 18px 25px rgb(0 0 0 / 5%);
+  }
+
+  .portfolio-nav-links.is-open {
+    display: flex;
+  }
+
+  .portfolio-nav-link {
+    padding: 12px 13px;
+    font-size: 13px;
+  }
+
+  .portfolio-nav-mobile-section-link {
+    display: block;
+    padding: 10px 13px;
+    border-radius: 7px;
+    color: var(--nav-muted);
+    font-size: 12px;
+    font-weight: 550;
+    text-decoration: none;
+  }
+
+  .portfolio-nav-mobile-section-link:hover {
+    background: var(--nav-accent-soft);
+    color: var(--nav-accent);
+  }
+}
+
+@media (max-width: 390px) {
+  .portfolio-nav-container {
+    width: calc(100% - 24px);
+  }
+
+  .portfolio-nav-brand-text small {
+    letter-spacing: 0.06em;
+  }
+
+  .portfolio-nav-actions {
+    gap: 6px;
+  }
+
+  .portfolio-nav-contact {
+    gap: 4px;
+    padding-inline: 8px;
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-navbar,
+  .portfolio-navbar * {
+    scroll-behavior: auto;
+    transition-duration: 0.01ms;
+  }
+}
