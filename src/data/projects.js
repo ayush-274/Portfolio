@@ -1,23 +1,6 @@
 
 export const projects = [
   {
-    slug: "quickbite-express",
-    title: "QuickBite Express",
-    subtitle: "Delivery Optimization Engine",
-    category: "Machine Learning",
-    summary:
-      "An operational optimization concept using predictive models to support delivery dispatching and routing decisions.",
-    problem:
-      "Delivery operations need to account for changing demand and operational constraints when making dispatch decisions.",
-    approach: [
-      "Developed predictive modelling workflows to estimate demand surges and changing constraints.",
-      "Explored how machine learning outputs could inform dispatching and routing decisions.",
-    ],
-    technologies: ["Python", "Streamlit", "scikit-learn"],
-    type: "Project",
-    featured: true,
-  },
-  {
     slug: "insightiq-text-to-sql",
     title: "InsightIQ",
     subtitle: "Agentic Text-to-SQL LLM Engine",
@@ -38,23 +21,6 @@ export const projects = [
       "Vector Databases",
     ],
     type: "AI Project",
-    featured: true,
-  },
-  {
-    slug: "insightiq-schema-mapping",
-    title: "InsightIQ — Automated Data Ingestion & Schema Mapping Engine",
-    subtitle: "Schema Mapping & Query Validation",
-    category: "Data Engineering",
-    summary:
-      "An automated metadata extraction and schema-mapping engine that prepares structured database context for downstream processing.",
-    problem:
-      "Database structures and schema exceptions can complicate automated query execution and downstream data workflows.",
-    approach: [
-      "Built an automated metadata extraction framework to map physical database schemas into structured system contexts.",
-      "Developed query-execution validation workflows to handle structural exceptions and protect downstream data processing.",
-    ],
-    technologies: ["Python", "SQL", "PostgreSQL", "Git"],
-    type: "Data Engineering Project",
     featured: true,
   },
   {
